@@ -1,7 +1,7 @@
-import { getPayload } from "payload";
+// import { getPayload } from "payload";
 
-export async function getCMS() {
-  return getPayload({
-    config: undefined,
-  });
-}
+// export async function getCMS() {
+//   return getPayload({
+//     config: undefined,
+//   });
+// }
