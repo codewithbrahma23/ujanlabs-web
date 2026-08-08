@@ -59,16 +59,34 @@ function GlobeGrid({ radius = 2 }: { radius?: number }) {
     return lines;
   }, [radius]);
 
+  // return (
+  //   <group>
+  //     {[...latitudeLines, ...longitudeLines].map((points, index) => {
+  //       const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+  //       return (
+  //         <line key={index} geometry={geometry}>
+  //           <lineBasicMaterial color="#38bdf8" transparent opacity={0.12} />
+  //         </line>
+  //       );
+  //     })}
+  //   </group>
+  // );
+
   return (
     <group>
       {[...latitudeLines, ...longitudeLines].map((points, index) => {
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
-        return (
-          <line key={index} geometry={geometry}>
-            <lineBasicMaterial color="#38bdf8" transparent opacity={0.12} />
-          </line>
-        );
+        const material = new THREE.LineBasicMaterial({
+          color: "#38bdf8",
+          transparent: true,
+          opacity: 0.12,
+        });
+
+        const line = new THREE.Line(geometry, material);
+
+        return <primitive key={index} object={line} />;
       })}
     </group>
   );
