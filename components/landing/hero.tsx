@@ -53,10 +53,10 @@ export function Hero({ data }: HeroProps) {
               tracking-tight
               text-foreground
               sm:text-6xl
-              lg:text-7xl
+              lg:text-6xl
             "
           >
-            We build modern software that scales with you.
+            {hero.headline}
           </h1>
 
           <p

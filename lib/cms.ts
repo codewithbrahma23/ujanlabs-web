@@ -1,4 +1,4 @@
-const CMS_URL = process.env.PAYLOAD_API_URL || "http://localhost:3000";
+const CMS_URL = process.env.PAYLOAD_API_URL || "http://localhost:3001";
 
 export async function getHomepage() {
   const res = await fetch(`${CMS_URL}/api/globals/homepage`, {
